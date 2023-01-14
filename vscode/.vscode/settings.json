@@ -1,0 +1,40 @@
+{
+    "cmake.configureOnEdit": false,
+    "cmake.configureOnOpen": false,
+
+    "editor.fontFamily": "'JetBrains Mono', 'Monaco', 'Ubuntu Mono', Consolas, monospace, 'Courier New'",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 13,
+    "editor.rulers": [120],
+    
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 3000,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    
+    "keyboard.dispatch": "keyCode",
+
+    "vim.handleKeys": {
+        "<C-o>": true,
+        "<C-i>": true
+    },
+    "vim.useCtrlKeys": false,
+    "vim.useSystemClipboard": true,
+
+    "output.smartScroll.enabled": false,
+
+    "spellright.documentTypes": [],
+    "spellright.suggestionsInHints": false,
+
+    "window.commandCenter": false,
+    "window.newWindowDimensions": "maximized",
+    "window.restoreWindows": "none", 
+    "window.titleBarStyle": "custom",
+    
+    "workbench.colorTheme": "Ayu Mirage Bordered",
+    "workbench.iconTheme": "ayu",
+
+    "[latex][latex-expl3][markdown][markdown_latex_combined][markdown-math][tex]": {
+        "editor.rulers": [80]
+    },
+}

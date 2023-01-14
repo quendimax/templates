@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        // themes
+        "fabiospampinato.vscode-monokai-night",  // colors
+        "teabyii.ayu",                           // colors and icons
+
+        // editor
+        "vscodevim.vim",
+        "stkb.rewrap",
+        "ban.spellright",
+
+        // [markdown]
+        "shd101wyy.markdown-preview-enhanced"
+    ]
+}

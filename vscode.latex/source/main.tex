@@ -1,0 +1,23 @@
+% !TeX program = xelatex
+
+\documentclass[14pt]{extarticle}
+
+\usepackage{fontspec}
+\usepackage[abspath]{currfile}
+
+\setmainfont{Times New Roman}  % system font
+\setsansfont{Ubuntu}[          % custom font
+    Path = \currfiledir/../fonts/,
+    Extension = .ttf,
+    UprightFont = *-R,
+    BoldFont = *-B,
+    ItalicFont = *-RI,
+    BoldItalicFont = *-BI
+]
+\setmonofont{Courier}          % LaTeX font
+
+\begin{document}
+
+\input{body.tex}
+
+\end{document}

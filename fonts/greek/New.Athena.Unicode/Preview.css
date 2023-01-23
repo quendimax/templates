@@ -1,0 +1,33 @@
+@font-face {
+  font-family: New Athena Unicode;
+  src: url(newathu5_8.ttf);
+}
+/* use Gentium Plus - Italic in .woff2 format */
+@font-face {
+  font-family: New Athena Unicode;
+  font-style: italic;
+  src: url(newathuItalic5_8.ttf);
+}
+/* use Gentium Plus - Bold in .woff2 format */
+@font-face {
+	font-family: New Athena Unicode;
+	font-weight: bold;
+	src: url(newathuBold5_8.ttf);
+}
+/* use Gentium Plus - Bold Italic in .woff2 format */
+@font-face {
+	font-family: New Athena Unicode;
+	font-weight: bold;
+	font-style: italic;
+	src: url(newathuBoldItalic5_8.ttf);
+}
+
+/* set body to use Gentium Plus */
+body {
+  font-family: New Athena Unicode, sans-serif;
+  /* fall back to sans serif so that it's really obvious if the fonts don't load */
+}
+/* remove bold styling from heading */
+h1 {
+  font-weight: normal;	
+}

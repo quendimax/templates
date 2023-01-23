@@ -1,0 +1,33 @@
+@font-face {
+  font-family: GentiumPlus;
+  src: url(GentiumPlus-Regular.ttf);
+}
+/* use Gentium Plus - Italic in .woff2 format */
+@font-face {
+  font-family: GentiumPlus;
+  font-style: italic;
+  src: url(GentiumPlus-Italic.ttf);
+}
+/* use Gentium Plus - Bold in .woff2 format */
+@font-face {
+	font-family: GentiumPlus;
+	font-weight: bold;
+	src: url(GentiumPlus-Bold.ttf);
+}
+/* use Gentium Plus - Bold Italic in .woff2 format */
+@font-face {
+	font-family: GentiumPlus;
+	font-weight: bold;
+	font-style: italic;
+	src: url(GentiumPlus-BoldItalic.ttf);
+}
+
+/* set body to use Gentium Plus */
+body {
+  font-family: GentiumPlus, sans-serif;
+    /* fall back to sans serif so that it's really obvious if the fonts don't load */
+}
+/* remove bold styling from heading */
+h1 {
+  font-weight: normal;	
+}

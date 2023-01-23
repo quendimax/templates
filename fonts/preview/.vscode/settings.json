@@ -1,0 +1,42 @@
+{
+    // turn off autoSave because we use save as a build command
+    "files.autoSave": "off",
+
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/build",
+    "latex-workshop.latex.recipe.default": "latexmk (xelatex)",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatexmk",
+            "command": "latexmk",
+            "args": [
+                "-xelatex",
+                "-synctex=-1",
+                "-interaction=nonstopmode",
+                "-halt-on-error",
+                "-outdir=%WORKSPACE_FOLDER%/build",
+                "-auxdir=%WORKSPACE_FOLDER%/build",
+                "%WORKSPACE_FOLDER%/source/main.tex"
+            ],
+            "env": {
+                // "MISSFONT_LOG": "%WORKSPACE_FOLDER%/build/missfont.log"
+            }
+        },
+        {
+            "name": "lualatexmk",
+            "command": "latexmk",
+            "args": [
+                "-lualatex",
+                "-synctex=-1",
+                "-interaction=nonstopmode",
+                "-halt-on-error",
+                "-outdir=%WORKSPACE_FOLDER%/build",
+                "-auxdir=%WORKSPACE_FOLDER%/build",
+                "%WORKSPACE_FOLDER%/source/preview.tex"
+            ],
+            "env": {
+                // "MISSFONT_LOG": "%WORKSPACE_FOLDER%/build/missfont.log"
+            }
+        }
+    ],
+}

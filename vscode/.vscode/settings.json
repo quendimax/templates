@@ -2,17 +2,21 @@
     "cmake.configureOnEdit": false,
     "cmake.configureOnOpen": false,
 
-    "editor.fontFamily": "'JetBrains Mono', 'Monaco', 'Ubuntu Mono', Consolas, monospace, 'Courier New'",
-    "editor.fontLigatures": true,
+    "editor.fontFamily": "'Cascadia Code', 'JetBrains Mono', 'Monaco', 'Ubuntu Mono', Consolas, monospace, 'Courier New'",
+    "editor.fontLigatures": "'calt', 'ss01'", // -> !=
     "editor.fontSize": 13,
+    "editor.minimap.showSlider": "always",
     "editor.rulers": [120],
+    "editor.scrollbar.verticalScrollbarSize": 0,  // the scroolbar is redundant with the minimap
+    "editor.unicodeHighlight.ambiguousCharacters": false,
     
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 3000,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     
     "keyboard.dispatch": "keyCode",
+
+    "latex-workshop.latex.autobuild.run": "never",  // to avoid run within non TeX projects
 
     "vim.handleKeys": {
         "<C-o>": true,

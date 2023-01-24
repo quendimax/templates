@@ -19,4 +19,4 @@ for root, dirs, files in os.walk(font_dir):
     font_files = [font_file for font_file in font_files if not os.path.islink(font_file)]
     for font_file in font_files:
         font_link = os.path.join(all_dir, os.path.basename(font_file))
-        os.symlink(font_file, font_link)
+        os.symlink(os.path.relpath(font_file, all_dir), font_link)

@@ -19,4 +19,20 @@ for root, dirs, files in os.walk(font_dir):
     font_files = [font_file for font_file in font_files if not os.path.islink(font_file)]
     for font_file in font_files:
         font_link = os.path.join(all_dir, os.path.basename(font_file))
-        os.symlink(os.path.relpath(font_file, all_dir), font_link)
+        font_path = os.path.relpath(font_file, all_dir)
+        ok = True
+        if os.path.exists(font_link):
+            msg = 'A link of the following font already exists:\n  %s\n'\
+                  'Do you want to replace it with this one?\n  %s\n[Y/n]: '
+            prev_orig_path = os.path.relpath(os.path.realpath(font_link), all_dir)
+            while True:
+                answer = input(msg % (prev_orig_path, font_path))
+                if answer.lower() in {'yes', 'y', ''}:
+                    os.remove(font_link)
+                    ok = True
+                    break
+                elif answer.lower() in {'no', 'n'}:
+                    ok = False
+                    break
+        if ok:
+            os.symlink(font_path, font_link)

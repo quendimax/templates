@@ -53,9 +53,13 @@ Sans fonts
 | Name             | Lang/Script | License    | Version | Preview | Notes |
 |---               |---          |---         |---      |---      |---    |
 | [Ubuntu]         | Latin, Cyrillic, Greek | [Free][ubu-lns] | 0.83
+| [Inter]          | Latin, Cyrillic, Greek, [IPA] | [SIL OFL][int-lns] | 3.19 |
 
 [Ubuntu]: https://design.ubuntu.com/font
+[Inter]: https://rsms.me/inter/
+
 [ubu-lns]: ./sans/Ubuntu/LICENCE.txt
+[int-lns]: ./sans/Inter/LICENSE.txt
 
 Serif fonts
 -----------
@@ -82,4 +86,3 @@ Old slavic fonts
 | Name             | Lang/Script | License    | Version | Preview | Notes |
 |---               |---          |---         |---      |---      |---    |
 | Izhitsa          | *           | Unknown | | | *Don't use it!* It is here only for compatibility. The font replaces some latin characters with old slavic ones. It is commonly used in BSU. And it is a very bad practice. |
-

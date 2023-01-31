@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{fontcollect}[2023-01-23 01:58:55 All font package is generated automatically.]
+\ProvidesPackage{fontcollect}[2023-02-01 00:16:47 All font package is generated automatically.]
 
 \RequirePackage[abspath]{currfile}
 \newcommand{\allfontsdir}{\currfiledir ../../all/}
@@ -15,6 +15,22 @@
   BoldItalicFont = GentiumBookPlus-BoldItalic.ttf
 ]
 \newcommand\textgentiumbookplus[1]{{\fontgentiumbookplus #1}}
+
+\newfontfamily\fontinter{Inter}[
+  Path = \allfontsdir/,
+  UprightFont = Inter.ttf,
+  BoldFont = Inter-Bold.ttf,
+  ItalicFont = Inter-italic.ttf,
+  BoldItalicFont = Inter-BoldItalic.otf
+]
+\newcommand\textinter[1]{{\fontinter #1}}
+
+\newfontfamily\fontintermedium{Inter Medium}[
+  Path = \allfontsdir/,
+  UprightFont = Inter-Medium.otf,
+  ItalicFont = Inter-MediumItalic.ttf,
+]
+\newcommand\textintermedium[1]{{\fontintermedium #1}}
 
 \newfontfamily\fontebgaramond{EB Garamond}[
   Path = \allfontsdir/,
@@ -127,6 +143,13 @@
 ]
 \newcommand\textgentiumplus[1]{{\fontgentiumplus #1}}
 
+\newfontfamily\fontinterlight{Inter Light}[
+  Path = \allfontsdir/,
+  UprightFont = Inter-Light.otf,
+  ItalicFont = Inter-LightItalic.otf,
+]
+\newcommand\textinterlight[1]{{\fontinterlight #1}}
+
 \newfontfamily\fontjetbrainsmono{JetBrains Mono}[
   Path = \allfontsdir/,
   UprightFont = JetBrainsMono-Regular.ttf,
@@ -163,6 +186,20 @@
 ]
 \newcommand\textfiracodemedium[1]{{\fontfiracodemedium #1}}
 
+\newfontfamily\fontinterextralight{Inter Extra Light}[
+  Path = \allfontsdir/,
+  UprightFont = Inter-ExtraLight.otf,
+  ItalicFont = Inter-ExtraLightItalic.otf,
+]
+\newcommand\textinterextralight[1]{{\fontinterextralight #1}}
+
+\newfontfamily\fontintersemibold{Inter Semi Bold}[
+  Path = \allfontsdir/,
+  UprightFont = Inter-SemiBold.ttf,
+  ItalicFont = Inter-SemiBoldItalic.ttf,
+]
+\newcommand\textintersemibold[1]{{\fontintersemibold #1}}
+
 \newfontfamily\fontheuristica{Heuristica}[
   Path = \allfontsdir/,
   UprightFont = Heuristica-Regular.otf,
@@ -178,6 +215,13 @@
   ItalicFont = CascadiaCodePL-ExtraLightItalic.otf,
 ]
 \newcommand\textcascadiacodeplextralight[1]{{\fontcascadiacodeplextralight #1}}
+
+\newfontfamily\fontinterthin{Inter Thin}[
+  Path = \allfontsdir/,
+  UprightFont = Inter-Thin.ttf,
+  ItalicFont = Inter-ThinItalic.otf,
+]
+\newcommand\textinterthin[1]{{\fontinterthin #1}}
 
 \newfontfamily\fontnewathenaunicode{New Athena Unicode}[
   Path = \allfontsdir/,
@@ -222,6 +266,12 @@
   ItalicFont = JetBrainsMonoNL-ExtraLightItalic.ttf,
 ]
 \newcommand\textjetbrainsmononlextralight[1]{{\fontjetbrainsmononlextralight #1}}
+
+\newfontfamily\fontinterv{Inter V}[
+  Path = \allfontsdir/,
+  UprightFont = Inter-V.ttf,
+]
+\newcommand\textinterv[1]{{\fontinterv #1}}
 
 \newfontfamily\fontubuntulight{Ubuntu Light}[
   Path = \allfontsdir/,
@@ -355,12 +405,26 @@
 ]
 \newcommand\textjetbrainsmonoextrabold[1]{{\fontjetbrainsmonoextrabold #1}}
 
+\newfontfamily\fontinterblack{Inter Black}[
+  Path = \allfontsdir/,
+  UprightFont = Inter-Black.ttf,
+  ItalicFont = Inter-BlackItalic.ttf,
+]
+\newcommand\textinterblack[1]{{\fontinterblack #1}}
+
 \newfontfamily\fontcascadiamonoextralight{Cascadia Mono ExtraLight}[
   Path = \allfontsdir/,
   UprightFont = CascadiaMono-ExtraLight.ttf,
   ItalicFont = CascadiaMono-ExtraLightItalic.otf,
 ]
 \newcommand\textcascadiamonoextralight[1]{{\fontcascadiamonoextralight #1}}
+
+\newfontfamily\fontinterextrabold{Inter Extra Bold}[
+  Path = \allfontsdir/,
+  UprightFont = Inter-ExtraBold.otf,
+  ItalicFont = Inter-ExtraBoldItalic.otf,
+]
+\newcommand\textinterextrabold[1]{{\fontinterextrabold #1}}
 
 \newfontfamily\fontcascadiacodeplsemibold{Cascadia Code PL SemiBold}[
   Path = \allfontsdir/,

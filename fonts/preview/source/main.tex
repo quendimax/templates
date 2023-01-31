@@ -1,11 +1,108 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[10pt]{article}
+
+\usepackage[
+    a4paper,
+    top=30mm,
+    bottom=30mm,
+    left=40mm,  % outer because of reversemp
+    right=20mm, % inner because of reversemp
+    reversemp,
+    marginparwidth=24mm]{geometry}
 
 \usepackage{fontcollect}
+\usepackage{fontspec}
+\usepackage{parskip}
+\usepackage{ebgaramond}
+
+
+% \setlength{\parindent}{0pt}
+% \setlength{\parskip}{20pt}
+
+\let\oldmarginpar\marginpar
+\renewcommand\marginpar[1]{\oldmarginpar{\footnotesize{#1}}}
+
+
+% text commands
+\newcommand\testfont[2]{
+    {#1 \teststr}
+    \marginpar{#2}
+}
+
+\newcommand\previewcode[2]{
+    \testfont{#1}{#2}\\
+    \textbf{\testfont{#1}{#2}}\\
+    \textit{\testfont{#1}{#2}}\\
+    \textit{\textbf{\testfont{#1}{#2}}}
+}
 
 \begin{document}
 
-currfiledir: \currfiledir
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mono fonts comparison
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-thisfontdir: \allfontsdir
+\section{Code}
+
+\subsection{Lower Case}
+
+\newcommand\teststr{the -> (qu1ick + brown) != fox >= {jumps} over .. the += 1lazy => dog0o}
+
+\previewcode{\fontcascadiacode}{Cascadia Code}
+
+\previewcode{\fontfiracode}{Fira Code}
+
+\previewcode{\fontjetbrainsmono}{JetBrains Mono}
+
+\previewcode{\fontubuntumono}{Ubuntu Mono}
+
+\subsubsection{Comparison}
+Normal:\\
+\testfont{\fontcascadiacode}{Cascadia Code}\\
+\testfont{\fontfiracode}{Fira Code}\\
+\testfont{\fontjetbrainsmono}{JetBrains Mono}\\
+\testfont{\fontubuntumono}{Ubuntu Mono}
+
+Italic:\\
+\textit{
+\testfont{\fontcascadiacode}{Cascadia Code}\\
+\testfont{\fontfiracode}{Fira Code}\\
+\testfont{\fontjetbrainsmono}{JetBrains Mono}\\
+\testfont{\fontubuntumono}{Ubuntu Mono}
+}
+
+\subsection{Upper Case}
+
+\renewcommand\teststr{THE -> (QU1ICK + BROWN) != FOX >= {JUMPS} OVER .. THE += 1LAZY => DOG0O}
+
+\previewcode{\fontcascadiacode}{Cascadia Code}
+
+\previewcode{\fontfiracode}{Fira Code}
+
+\previewcode{\fontjetbrainsmono}{JetBrains Mono}
+
+\previewcode{\fontubuntumono}{Ubuntu Mono}
+
+\subsubsection{Comparison}
+Normal:\\
+\testfont{\fontcascadiacode}{Cascadia Code}\\
+\testfont{\fontfiracode}{Fira Code}\\
+\testfont{\fontjetbrainsmono}{JetBrains Mono}\\
+\testfont{\fontubuntumono}{Ubuntu Mono}
+
+Italic:\\
+\textit{
+\testfont{\fontcascadiacode}{Cascadia Code}\\
+\testfont{\fontfiracode}{Fira Code}\\
+\testfont{\fontjetbrainsmono}{JetBrains Mono}\\
+\testfont{\fontubuntumono}{Ubuntu Mono}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Greek fonts comparison
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Greek}
+
+\subsection{Lower Case}
 
 \end{document}

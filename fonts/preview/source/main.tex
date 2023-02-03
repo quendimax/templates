@@ -1,4 +1,4 @@
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 
 \usepackage[
     a4paper,
@@ -12,97 +12,448 @@
 \usepackage{fontcollect}
 \usepackage{fontspec}
 \usepackage{parskip}
-\usepackage{ebgaramond}
+% \usepackage{ebgaramond}
+% \usepackage{heuristica}
+\usepackage{CharisSIL}
 
 
 % \setlength{\parindent}{0pt}
 % \setlength{\parskip}{20pt}
 
 \let\oldmarginpar\marginpar
-\renewcommand\marginpar[1]{\oldmarginpar{\footnotesize{#1}}}
-
+\renewcommand\marginpar[1]{\oldmarginpar{\scriptsize{#1}}}
 
 % text commands
-\newcommand\testfont[2]{
-    {#1 \teststr}
-    \marginpar{#2}
+\newcommand\testbasicstr{A string to show all interesting symbols of the font}
+\newcommand\testlowerstr{\MakeLowercase{\testbasicstr}}
+\newcommand\testupperstr{\MakeUppercase{\testbasicstr}}
+\newcommand\teststr{\testbasicstr}
+
+\newcommand\preview{
+    \teststr\marginpar{Regular}\\
+    \textbf{\teststr}\marginpar{Bold}\\
+    \textit{\teststr}\marginpar{Italic}\\
+    \textbf{\textit{\teststr}}\marginpar{Bold Italic}
 }
 
-\newcommand\previewcode[2]{
-    \testfont{#1}{#2}\\
-    \textbf{\testfont{#1}{#2}}\\
-    \textit{\testfont{#1}{#2}}\\
-    \textit{\textbf{\testfont{#1}{#2}}}
-}
+\newcommand\codepangram{The -> (qu1ick + brown) != fox >= {jumps} over .. the += 1lazy => dog0o}
+\newcommand\greekpangram{Ξεσκεπάζω τὴν ψυχοφθόρα βδελυγμία}
+\newcommand\latinpangram{The quick brown fox jumps over the lazy dog}
+\newcommand\cyrillicpangram{Съешь же ещё этих мягких французских булок да выпей чаю}
 
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Mono fonts comparison
+% Fonts Preview
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Code}
+\section{Fonts Preview}
 
-\subsection{Lower Case}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mono fonts preview
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Code Fonts}
 
-\newcommand\teststr{the -> (qu1ick + brown) != fox >= {jumps} over .. the += 1lazy => dog0o}
+\renewcommand\testbasicstr{\codepangram}
 
-\previewcode{\fontcascadiacode}{Cascadia Code}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Cascadia Code}
 
-\previewcode{\fontfiracode}{Fira Code}
+{
+\fontcascadiacode\footnotesize
+\renewcommand\teststr{\testlowerstr}
+\preview
 
-\previewcode{\fontjetbrainsmono}{JetBrains Mono}
-
-\previewcode{\fontubuntumono}{Ubuntu Mono}
-
-\subsubsection{Comparison}
-Normal:\\
-\testfont{\fontcascadiacode}{Cascadia Code}\\
-\testfont{\fontfiracode}{Fira Code}\\
-\testfont{\fontjetbrainsmono}{JetBrains Mono}\\
-\testfont{\fontubuntumono}{Ubuntu Mono}
-
-Italic:\\
-\textit{
-\testfont{\fontcascadiacode}{Cascadia Code}\\
-\testfont{\fontfiracode}{Fira Code}\\
-\testfont{\fontjetbrainsmono}{JetBrains Mono}\\
-\testfont{\fontubuntumono}{Ubuntu Mono}
+\renewcommand\teststr{\testupperstr}
+\preview
 }
 
-\subsection{Upper Case}
+Also the font has a stylistic alternate for the italic shape.
 
-\renewcommand\teststr{THE -> (QU1ICK + BROWN) != FOX >= {JUMPS} OVER .. THE += 1LAZY => DOG0O}
+{
+\it\fontcascadiacode\footnotesize
+\testlowerstr\marginpar{Original}\\
+\addfontfeatures{Alternate = 1}
+\testlowerstr\marginpar{Alternate}
+}
 
-\previewcode{\fontcascadiacode}{Cascadia Code}
+And you can choose another shape of zero:
+{\fontcascadiacode\footnotesize\addfontfeature{StylisticSet = 19} 0}
+instead of
+{\fontcascadiacode\footnotesize 0}.
 
-\previewcode{\fontfiracode}{Fira Code}
 
-\previewcode{\fontjetbrainsmono}{JetBrains Mono}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Fira Code}
 
-\previewcode{\fontubuntumono}{Ubuntu Mono}
+Fira Code doesn't have italic shapes.
 
-\subsubsection{Comparison}
-Normal:\\
-\testfont{\fontcascadiacode}{Cascadia Code}\\
-\testfont{\fontfiracode}{Fira Code}\\
-\testfont{\fontjetbrainsmono}{JetBrains Mono}\\
-\testfont{\fontubuntumono}{Ubuntu Mono}
+{
+\fontfiracode\footnotesize
 
-Italic:\\
-\textit{
-\testfont{\fontcascadiacode}{Cascadia Code}\\
-\testfont{\fontfiracode}{Fira Code}\\
-\testfont{\fontjetbrainsmono}{JetBrains Mono}\\
-\testfont{\fontubuntumono}{Ubuntu Mono}
+\testlowerstr\marginpar{Regular}\\
+\textbf{\testlowerstr}\marginpar{Bold}
+
+\testupperstr\marginpar{Regular}\\
+\textbf{\testupperstr}\marginpar{Bold}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{JetBrains Mono}
+
+{
+\fontjetbrainsmono\footnotesize
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Greek fonts comparison
+\subsubsection{Ubuntu Mono}
+
+{
+\fontubuntumono
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Greek fonts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak\subsection{Greek Fonts}
 
-\section{Greek}
+There are fonts supporting ancient greek polytonic alphabet.
 
-\subsection{Lower Case}
+\renewcommand\testbasicstr{\greekpangram}
+\newcommand\testiliad{
+μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος \marginpar{Iliad extract}\\
+οὐλομένην, ἣ μυρί᾽ Ἀχαιοῖς ἄλγε᾽ ἔθηκε,\\
+πολλὰς δ᾽ ἰφθίμους ψυχὰς Ἄϊδι προΐαψεν\\
+ἡρώων, αὐτοὺς δὲ ἑλώρια τεῦχε κύνεσσιν\\
+οἰωνοῖσί τε πᾶσι, Διὸς δ᾽ ἐτελείετο βουλή,\\
+ἐξ οὗ δὴ τὰ πρῶτα διαστήτην ἐρίσαντε\\
+Ἀτρεΐδης τε ἄναξ ἀνδρῶν καὶ δῖος Ἀχιλλεύς.
+}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Gentium Plus}
+
+{
+\fontgentiumplus\large
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\testiliad
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{New Athena Unicode}
+
+{
+\fontnewathenaunicode\large
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\testiliad
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hand fonts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak\subsection{Hand Fonts}
+
+\newcommand\testkupala{
+А хто там ідзе, а хто там ідзе\marginpar{Янка Купала}\\
+У агромністай такой грамадзе?\\
+— Беларусы.\\
+А што яны нясуць на худых плячах,\\
+На руках ў крыві, на нагах у лапцях?\\
+— Сваю крыўду.\\
+А куды ж нясуць гэту крыўду ўсю,\\
+А куды ж нясуць на паказ сваю?\\
+— На свет цэлы.\\
+А хто гэта іх, не адзін мільён,\\
+Крыўду несць наўчыў, разбудзіў іх сон?\\
+— Бяда, гора.\\
+А чаго ж, чаго захацелась ім,\\
+Пагарджаным век, ім, сляпым, глухім?\\
+— Людзьмі звацца.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Piasniar}
+
+The font is inspired by Janka Kupała's handwriting.
+
+{
+\fontpiasniar\large
+\testkupala
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sans fonts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak\subsection{Sans Fonts}
+
+\newcommand\testshakespear{
+    To be, or not to be, that is the question,\marginpar{Hamlet extract}\\
+    Whether 'tis nobler in the mind to suffer\\
+    The slings and arrows of outrageous fortune,\\
+    Or to take arms against a sea of troubles,\\
+    And by opposing end them? To die: to sleep;\\
+    No more; and by a sleep to say we end\\
+    The heart-ache and the thousand natural shocks\\
+    That flesh is heir to, 'tis a consummation\\
+    Devoutly to be wish'd. To die, to sleep;
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Inter}
+
+{
+\fontinter
+
+\renewcommand\testbasicstr{\latinpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\renewcommand\testbasicstr{\cyrillicpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\testshakespear
+
+\testkupala
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Ubuntu}
+
+{
+\fontubuntu
+
+\renewcommand\testbasicstr{\latinpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\renewcommand\testbasicstr{\cyrillicpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\testshakespear
+
+\testkupala
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Serif fonts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak\subsection{Serif Fonts}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Charis SIL}
+
+{
+\fontcharissil
+
+\renewcommand\testbasicstr{\latinpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\renewcommand\testbasicstr{\cyrillicpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\testshakespear
+
+\testkupala
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak\subsubsection{EB Garamond}
+
+{
+\fontebgaramond
+
+\renewcommand\testbasicstr{\latinpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\renewcommand\testbasicstr{\cyrillicpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\testshakespear
+
+\testkupala
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak\subsubsection{Gentium Plus}
+
+Gentium Plus has beautiful shapes for Greek letter, but also it has good shapes
+for Latin and Cyrillic fonts.
+
+{
+\fontheuristica
+
+\renewcommand\testbasicstr{\latinpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\renewcommand\testbasicstr{\cyrillicpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\testshakespear
+
+\testkupala
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak\subsubsection{Heuristica}
+
+{
+\fontheuristica
+
+\renewcommand\testbasicstr{\latinpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\renewcommand\testbasicstr{\cyrillicpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\testshakespear
+
+\testkupala
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Comparison}
+
+This section contains comparison of some fonts with their most popular (but
+proprietary) competitors.
+
+\subsection{Sans Serif Font Comparison}
+
+The most popular font for sans serif shape is Times New Roman. So let compare it
+with our fonts.
+
+\newcommand\fonttimesnewroman{\fontspec{Times New Roman}}
+
+\newcommand\comparefontshelper[4]{
+    {#1\testlowerstr\marginpar{#2}}\\
+    {#3\testlowerstr\marginpar{#4}}
+
+    {#1\testupperstr\marginpar{#2}}\\
+    {#3\testupperstr\marginpar{#4}}
+}
+
+\newcommand\comparefonts[4]
+{{
+    \renewcommand\testbasicstr{\latinpangram}
+    \comparefontshelper{#1}{#2}{#3}{#4}
+
+    \renewcommand\testbasicstr{\cyrillicpangram}
+    \comparefontshelper{#1}{#2}{#3}{#4}
+
+    \it  % \it command resets default font
+
+    \renewcommand\testbasicstr{\latinpangram}
+    \comparefontshelper{#1}{#2}{#3}{#4}
+
+    \renewcommand\testbasicstr{\cyrillicpangram}
+    \comparefontshelper{#1}{#2}{#3}{#4}
+
+    \normalfont
+    {#1 1234567890\marginpar{#2}}\\
+    {#3 1234567890\marginpar{#4}}
+}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Times New Roman vs Charis SIL}
+
+\comparefonts{\fonttimesnewroman}{Times New Roman}{\fontcharissil}{Charis SIL}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Times New Roman vs Gentium Plus}
+
+\comparefonts{\fonttimesnewroman}{Times New Roman}{\fontgentiumplus}{Gentium Plus}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Times New Roman vs Heuristica}
+
+\comparefonts{\fonttimesnewroman}{Times New Roman}{\fontheuristica}{Heuristica}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Times New Roman vs EB Garamond}
+
+\comparefonts{\fonttimesnewroman}{Times New Roman}{\fontebgaramond}{EB Garamond}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}

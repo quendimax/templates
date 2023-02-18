@@ -40,6 +40,9 @@
 \newcommand\greekpangram{Ξεσκεπάζω τὴν ψυχοφθόρα βδελυγμία}
 \newcommand\latinpangram{The quick brown fox jumps over the lazy dog}
 \newcommand\cyrillicpangram{Съешь же ещё этих мягких французских булок да выпей чаю}
+\newcommand\oldslavicpangram{Хрⷭ҇то́съ воскре́се и҆з̾ ме́ртвыхъ, сме́ртїю сме́рть попра́въ, и҆ сꙋ́щымъ во гробѣ́хъ живо́тъ дарова́въ.}
+\newcommand\oldbelarusanpangram{Выⷣрꙋкᲂвана сїа кни́га в̾лѣтᲂ ѿ съзⷣанїѧ ми́ра ҂ꙁ҃ч҃ае , з̾дрꙋка́рни до́мꙋ мамоничᲂвъ}
+\newcommand\glagolicpangram{Ⰻⱄⰽⱁⱀⰹ ⰱⱑ ⱄⰾⱁⰲⱁ · ⰻ ⱄⰾⱁⰲⱁ ⰱⱑ ⱋ̔ ⰱⰰ · ⰻ ⰱ͞ⱏ ⰱⱑ ⱄⰾⱁⰲⱁ ·}
 
 \begin{document}
 
@@ -393,8 +396,215 @@ for Latin and Cyrillic fonts.
 \testkupala
 }
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Comparison}
+% Old Slavic fonts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak\subsection{Church Slavonic Fonts}
+
+\newcommand\testslavonic{
+[в҃] \marginpar{Евангелие} А҆ндре́й первозва́нный, бра́тъ петро́въ, проповѣ́да
+є҆ѵⷢ҇лїе хрⷭ҇то́во вїѳѷні́и, по́нтꙋ и҆ а҆рме́нїи, скѵ́ѳѡмъ, и҆ согда́ємъ, и҆
+горсі́нѡмъ: проповѣ́да же и҆ въ севастопо́ли вели́цѣмъ, и҆дѣ́же є҆́сть по́лкъ
+а҆ссѷрі́йскъ, и҆ а҆ѯа́рови, и҆ сꙋлїмі́ни, и҆ ѳарсѵ́си, и҆дѣ́же живꙋ́тъ мꙋ́ри, и҆ сше́дъ
+да́же до є҆лла́ды, и҆ въ па́трѣхъ а҆ха́йскихъ на крⷭ҇тѣ̀ ра́спѧтъ бы́сть ѿ є҆геа́та царѧ̀
+тѵ́рска, и҆ сконча́сѧ та́мѡ, и҆ погребе́нъ бы́сть.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak\subsubsection{BukyVede}
+
+{
+\fontbukyvede
+
+\renewcommand\testbasicstr{\oldslavicpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\renewcommand\testbasicstr{\glagolicpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\renewcommand\testbasicstr{\oldbelarusanpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\testslavonic
+
+\testshakespear
+
+\testkupala
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak\subsubsection{Kliment Std}
+
+{
+\fontklimentstd
+
+\renewcommand\testbasicstr{\oldslavicpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\renewcommand\testbasicstr{\glagolicpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\renewcommand\testbasicstr{\oldbelarusanpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\testslavonic
+
+\testshakespear
+
+\testkupala
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak\subsubsection{Monomakh Unicode}
+
+{
+\fontmonomakhunicode
+
+\renewcommand\testbasicstr{\oldslavicpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\renewcommand\testbasicstr{\glagolicpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\renewcommand\testbasicstr{\oldbelarusanpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\testslavonic
+
+\testshakespear
+
+\testkupala
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak\subsubsection{RomanCyrillic Std}
+
+{
+\fontromancyrillicstd
+
+\renewcommand\testbasicstr{\oldslavicpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\renewcommand\testbasicstr{\glagolicpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\renewcommand\testbasicstr{\oldbelarusanpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\testslavonic
+
+\testshakespear
+
+\testkupala
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak\subsubsection{Vilnius}
+
+{
+\fontvilnius
+
+\renewcommand\testbasicstr{\oldslavicpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\renewcommand\testbasicstr{\glagolicpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\renewcommand\testbasicstr{\oldbelarusanpangram}
+
+\renewcommand\teststr{\testlowerstr}
+\preview
+
+\renewcommand\teststr{\testupperstr}
+\preview
+
+\testslavonic
+
+\testshakespear
+
+\testkupala
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Comparison
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak\section{Comparison}
 
 This section contains comparison of some fonts with their most popular (but
 proprietary) competitors.
@@ -455,5 +665,27 @@ with our fonts.
 
 \comparefonts{\fonttimesnewroman}{Times New Roman}{\fontebgaramond}{EB Garamond}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Times New Roman vs RomanCyrillic Std}
+
+\comparefonts{\fonttimesnewroman}{Times New Roman}{\fontromancyrillicstd}{
+RomanCyrillic Std}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Kliment Std vs RomanCyrillic Std}
+
+\comparefonts{\fontklimentstd}{Kliment Std}{\fontromancyrillicstd}{RomanCyrillic
+Std}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Monomakh Unicode vs BukyVede}
+
+\comparefonts{\fontmonomakhunicode}{Monomakh Unicode}{\fontbukyvede}{BukyVede}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Monomakh Unicode vs Vilnius}
+
+\comparefonts{\fontmonomakhunicode}{Monomakh Unicode}{\fontvilnius}{Vilnius}
+ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}

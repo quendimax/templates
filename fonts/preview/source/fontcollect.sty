@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{fontcollect}[2023-02-01 00:16:47 All font package is generated automatically.]
+\ProvidesPackage{fontcollect}[2023-02-18 17:06:25 All font package is generated automatically.]
 
 \RequirePackage[abspath]{currfile}
 \newcommand{\allfontsdir}{\currfiledir ../../all/}
@@ -105,6 +105,12 @@
 ]
 \newcommand\textcascadiacode[1]{{\fontcascadiacode #1}}
 
+\newfontfamily\fontvilnius{Vilnius}[
+  Path = \allfontsdir/,
+  UprightFont = Vilnius-Regular.otf,
+]
+\newcommand\textvilnius[1]{{\fontvilnius #1}}
+
 \newfontfamily\fontpiasniar{Piasniar}[
   Path = \allfontsdir/,
   UprightFont = Piasniar.ttf,
@@ -158,6 +164,12 @@
   BoldItalicFont = JetBrainsMono-BoldItalic.ttf
 ]
 \newcommand\textjetbrainsmono[1]{{\fontjetbrainsmono #1}}
+
+\newfontfamily\fontbukyvedelight{Bukyvede Light}[
+  Path = \allfontsdir/,
+  UprightFont = Bukyvede_Light.ttf,
+]
+\newcommand\textbukyvedelight[1]{{\fontbukyvedelight #1}}
 
 \newfontfamily\fontcascadiacodesemibold{Cascadia Code SemiBold}[
   Path = \allfontsdir/,
@@ -273,6 +285,12 @@
 ]
 \newcommand\textinterv[1]{{\fontinterv #1}}
 
+\newfontfamily\fontromancyrillicstd{RomanCyrillic Std}[
+  Path = \allfontsdir/,
+  UprightFont = RomanCyrillic_Std.ttf,
+]
+\newcommand\textromancyrillicstd[1]{{\fontromancyrillicstd #1}}
+
 \newfontfamily\fontubuntulight{Ubuntu Light}[
   Path = \allfontsdir/,
   UprightFont = Ubuntu-L.ttf,
@@ -294,6 +312,20 @@
   UprightFont = FiraCode-Retina.ttf,
 ]
 \newcommand\textfiracoderetina[1]{{\fontfiracoderetina #1}}
+
+\newfontfamily\fontklimentstd{Kliment Std}[
+  Path = \allfontsdir/,
+  UprightFont = Kliment_Std.ttf,
+]
+\newcommand\textklimentstd[1]{{\fontklimentstd #1}}
+
+\newfontfamily\fontbukyvede{Bukyvede}[
+  Path = \allfontsdir/,
+  UprightFont = BukyVede-Regular.ttf,
+  BoldFont = BukyVede-Bold.ttf,
+  ItalicFont = BukyVede-Italic.ttf,
+]
+\newcommand\textbukyvede[1]{{\fontbukyvede #1}}
 
 \newfontfamily\fontjetbrainsmonoextralight{JetBrains Mono ExtraLight}[
   Path = \allfontsdir/,
@@ -464,6 +496,12 @@
   ItalicFont = JetBrainsMonoNL-ExtraBoldItalic.ttf,
 ]
 \newcommand\textjetbrainsmononlextrabold[1]{{\fontjetbrainsmononlextrabold #1}}
+
+\newfontfamily\fontmonomakhunicode{Monomakh Unicode}[
+  Path = \allfontsdir/,
+  UprightFont = MonomakhUnicode.otf,
+]
+\newcommand\textmonomakhunicode[1]{{\fontmonomakhunicode #1}}
 
 \newfontfamily\fontebgaramondextrabold{EB Garamond ExtraBold}[
   Path = \allfontsdir/,

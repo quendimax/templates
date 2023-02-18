@@ -1,7 +1,10 @@
 My Font Collection
 ==================
 
-This is a collection of free fonts.
+This is a collection of free (mostly) fonts. There is a [pdf-preview] with these
+fonts.
+
+[pdf-preview]: ./preview/build/main.pdf
 
 Greek fonts
 -----------
